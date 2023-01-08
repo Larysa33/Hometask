@@ -8,13 +8,29 @@ public class CreditCard {
     -номер счета
     -текущая сумма на счету
     */
-    String accountNumber;
-    double accountAmount;
+    private String accountNumber;
+    private double accountAmount;
     public static final double MaxAmount = 1000000;
 
-    CreditCard(String cardNumber, double amount) {
-        accountNumber = cardNumber;
-        accountAmount = amount;
+    public CreditCard(String accountNumber, double accountAmount) {
+        this.accountNumber = accountNumber;
+        this.accountAmount = accountAmount;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getAccountAmount() {
+        return accountAmount;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void setAccountAmount(double accountAmount) {
+        this.accountAmount = accountAmount;
     }
 
     //Добавьте метод, который позволяет начислять сумму на кредитную карточку.

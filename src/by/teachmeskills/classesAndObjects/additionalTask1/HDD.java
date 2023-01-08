@@ -2,15 +2,42 @@ package by.teachmeskills.classesAndObjects.additionalTask1;
 
 public class HDD {
     // Класс HDD имеет поля "название", "объем" и "тип" (внешний или внутренний).
-    String hddName;
-    int hddVolume;
-    String hddType;
+    private String hddName;
+    private int hddVolume;
+    private String hddType;
 
     //Классы для RAM и HDD должны иметь конструктор по умолчанию и конструктор со всеми параметрами.
-    HDD(String name, int volume, String type) {
-        hddName = name;
-        hddVolume = volume;
-        hddType = type;
+    public HDD() {
+    }
+
+    public HDD(String hddName, int hddVolume, String hddType) {
+        this.hddName = hddName;
+        this.hddVolume = hddVolume;
+        this.hddType = hddType;
+    }
+
+    public String getHddName() {
+        return hddName;
+    }
+
+    public int getHddVolume() {
+        return hddVolume;
+    }
+
+    public String getHddType() {
+        return hddType;
+    }
+
+    public void setHddName(String hddName) {
+        this.hddName = hddName;
+    }
+
+    public void setHddVolume(int hddVolume) {
+        this.hddVolume = hddVolume;
+    }
+
+    public void setHddType(String hddType) {
+        this.hddType = hddType;
     }
 
     //В каждом из классов предусмотреть методы для вывода полной информации (вывод всех полей и всех значений).
