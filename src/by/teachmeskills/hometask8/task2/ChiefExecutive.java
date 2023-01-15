@@ -1,6 +1,6 @@
 package by.teachmeskills.hometask8.task2;
 
-public class Headmaster implements Employee {
+public class ChiefExecutive implements Employee {
     final String POSITION = "Директор";
 
     @Override

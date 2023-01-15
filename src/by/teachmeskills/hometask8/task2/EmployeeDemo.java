@@ -2,8 +2,8 @@ package by.teachmeskills.hometask8.task2;
 
 public class EmployeeDemo {
     public static void main(String[] args) {
-        Headmaster headmaster1 = new Headmaster();
-        headmaster1.info();
+        ChiefExecutive chiefExecutive1 = new ChiefExecutive();
+        chiefExecutive1.info();
 
         Worker worker1 = new Worker();
         worker1.info();
