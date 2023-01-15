@@ -1,6 +1,6 @@
-package by.teachmeskills.oop.task2;
+package by.teachmeskills.hometask8.task2;
 
-public class Program {
+public class EmployeeDemo {
     public static void main(String[] args) {
         Headmaster headmaster1 = new Headmaster();
         headmaster1.info();

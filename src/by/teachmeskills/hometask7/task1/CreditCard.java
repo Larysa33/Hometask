@@ -1,4 +1,4 @@
-package by.teachmeskills.classesAndObjects.task1;
+package by.teachmeskills.hometask7.task1;
 
 import java.util.Scanner;
 

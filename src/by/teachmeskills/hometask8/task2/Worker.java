@@ -1,4 +1,4 @@
-package by.teachmeskills.oop.task2;
+package by.teachmeskills.hometask8.task2;
 
 public class Worker implements Employee {
     final String POSITION = "Рабочий";

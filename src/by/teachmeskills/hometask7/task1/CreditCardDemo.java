@@ -1,6 +1,6 @@
-package by.teachmeskills.classesAndObjects.task1;
+package by.teachmeskills.hometask7.task1;
 
-public class Program {
+public class CreditCardDemo {
     public static void main(String[] args) {
         //Написать программу, которая создает три объекта класса CreditCard у которых заданы номер счета и начальная сумма.
         CreditCard card1 = new CreditCard("111111111", 10);
