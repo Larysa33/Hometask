@@ -1,5 +1,6 @@
 package by.teachmeskills.hometask10.document;
 import java.util.Date;
+import java.util.Objects;
 
 /*
 Контракт с сотрудником. Содержит поля:
@@ -9,21 +10,38 @@ import java.util.Date;
     Имя сотрудника
  */
 public class EmploymentContract extends Document {
-    private String employeeName;
-    private Date endDate;
+        private Date endOfContractDate;
+        private String employeeName;
 
-    public EmploymentContract() {
-    }
+        public EmploymentContract(Date documentDate, String documentNumber, Date endOfContractDate, String employeeName) {
+            super(documentDate, documentNumber);
+            this.endOfContractDate = endOfContractDate;
+            this.employeeName = employeeName;
+        }
 
-    public EmploymentContract(String numberOfDocument, Date dateOfDocument, String employeeName, Date endDate) {
-        super(numberOfDocument, dateOfDocument);
-        this.employeeName = employeeName;
-        this.endDate = endDate;
-    }
+        public EmploymentContract() {
+        }
 
-    @Override
-    public String getInfo() {
-        return "EmploymentContract № " + numberOfDocument + " of " + dateOfDocument + " with " + employeeName + ". " +
-                "End date: " + endDate;
-    }
+        @Override
+        public String toString() {
+            return "ContractWithEmployee{" +
+                    "endOfContractDate=" + endOfContractDate +
+                    ", employeeName='" + employeeName + "', " +
+                    super.toString() +
+                    '}';
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof EmploymentContract)) return false;
+            if (!super.equals(o)) return false;
+            EmploymentContract that = (EmploymentContract) o;
+            return endOfContractDate.equals(that.endOfContractDate) && employeeName.equals(that.employeeName);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), endOfContractDate, employeeName);
+        }
 }
