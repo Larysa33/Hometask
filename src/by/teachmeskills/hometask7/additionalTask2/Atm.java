@@ -10,17 +10,17 @@ public class Atm {
     Создать конструктор с тремя параметрами - количеством купюр каждого номинала.
     */
     long[] nominals = new long[3];
-    int [] denoms= new int[]{20,50,100};
+    int[] denoms = new int[]{20, 50, 100};
     int numberOfNominals;
 
     public Atm(int nominals20, int nominals50, int nominals100) {
-        numberOfNominals=denoms.length;
-        nominals[0]=nominals20;
-        nominals[1]=nominals50;
-        nominals[2]=nominals100;
+        numberOfNominals = denoms.length;
+        nominals[0] = nominals20;
+        nominals[1] = nominals50;
+        nominals[2] = nominals100;
     }
 
-    public void atmInfo(){
+    public void atmInfo() {
         System.out.println(Arrays.toString(nominals));
     }
 
@@ -35,23 +35,26 @@ public class Atm {
     успешность выполнения операции. При снятии денег функция должна распечатывать каким количеством купюр
     какого номинала выдаётся сумма.*/
     Scanner scanner = new Scanner(System.in);
+
     public int[] withdraw() {
         System.out.println("Введите сумму для снятия целым числом:");
         int sumToWithdraw = Math.abs(scanner.nextInt());
         int[] result = new int[3];
-        for (int i = 2; i <= 0; i--) {
+        for (int i = 2; i >= 0; i--) {
             if (sumToWithdraw >= denoms[i]) {
                 int quantity = (int) Math.min(nominals[i], sumToWithdraw / denoms[i]);
-                sumToWithdraw = -denoms[i] * quantity;
+                sumToWithdraw -= denoms[i] * quantity;
                 result[i] = quantity;
             }
         }
-            if (sumToWithdraw != 0) {
-                return new int[]{-1};
-            }
-            for (int i = 0; i < 2; i++) {
-                nominals[i] -= result[i];
-            }
-            return result;
+        if (sumToWithdraw != 0) {
+            System.out.println("В банкомате недостаточно средств.\n");
+            return new int[]{-1};
         }
+        for (int i = 0; i < 2; i++) {
+            nominals[i] -= result[i];
+        }
+        System.out.println("Количество снятых купюр: " + Arrays.toString(result) + "\n");
+        return result;
+    }
 }
